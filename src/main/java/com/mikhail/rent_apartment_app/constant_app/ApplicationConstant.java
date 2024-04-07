@@ -15,4 +15,5 @@ public class ApplicationConstant {
      */
     public static final String  REGISTRATION_DONE  = "Регистрация прошла успешно";
     public static final String REGISTRATION_APARTMENT = "Успешная регистрация апартаментов";
+
 }

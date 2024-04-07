@@ -16,6 +16,8 @@ public interface UserInfoRepository extends JpaRepository<UserInfoEntity, Long> 
     @Query(nativeQuery = true, value = "SELECT * FROM user_info WHERE nick_name = :nickName")
     UserInfoEntity getUserByNickName(String nickName);
 
+    @Query(nativeQuery = true, value = "SELECT * FROM user_info WHERE token = :token")
+    UserInfoEntity getUserByToken(String token);
 
 
 }

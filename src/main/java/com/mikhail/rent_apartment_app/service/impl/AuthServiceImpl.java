@@ -57,4 +57,11 @@ public class AuthServiceImpl implements AuthService {
     private String generateUniqueToken() {
         return UUID.randomUUID().toString() + "|" + LocalDateTime.now().plusDays(1L);
     }
+
+    public void getValidToken(String token) {
+        UserInfoEntity userByToken = userInfoRepository.getUserByToken(token);
+        if (isNull(userByToken)) {
+            throw new AuthException(GET_LOGIN, GET_LOGIN_CODE);
+        }
+    }
 }
